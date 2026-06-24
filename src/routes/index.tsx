@@ -87,10 +87,10 @@ function Hero() {
             <span className="w-1.5 h-1.5 rounded-full bg-primary" /> Brasília · DF
           </span>
           <h1 className="font-display text-4xl md:text-6xl leading-[1.05] text-foreground">
-            Cuidando do desenvolvimento, comportamento e bem-estar em todas as fases da vida.
+            Ciência, acolhimento e precisão clínica para compreender potencialidades, desafios e o desenvolvimento humano em suas diferentes fases.
           </h1>
           <p className="text-lg text-muted-foreground max-w-xl leading-relaxed">
-            Atendimento especializado em <em className="not-italic text-foreground">Neuropsicologia, ABA e Terapia Infantil</em> em Brasília e região.
+            Avaliação Neuropsicológica <em className="not-italic text-foreground">para todas as idades e Psicoterapia Infantil especializada.</em> em Brasília e região.
           </p>
           <div className="flex flex-wrap gap-3 pt-2">
             <a href="#agendar" className="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3.5 text-sm font-medium text-primary-foreground hover:opacity-90 transition shadow-[var(--shadow-soft)]">
