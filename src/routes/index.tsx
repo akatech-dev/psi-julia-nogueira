@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import juliaHero from "@/assets/julia-hero.jpg";
+import juliaHero3 from "@/assets/julia-hero3.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -120,7 +121,7 @@ function Hero() {
               <LeafMark className="w-8 h-8 text-primary" />
               <div>
                 <div className="font-display text-lg">Júlia Nogueira</div>
-                <div className="text-xs text-muted-foreground">Neuropsicóloga · CRP</div>
+                <div className="text-xs text-muted-foreground">Neuropsicóloga · CRP-01/25444</div>
               </div>
             </div>
           </div>
@@ -155,9 +156,12 @@ function About() {
     <section id="sobre" className="py-24 md:py-32">
       <div className="mx-auto max-w-6xl px-6 grid md:grid-cols-5 gap-12 items-center">
         <div className="md:col-span-2 relative">
-          <div className="aspect-[4/5] rounded-[2rem] bg-secondary/60 relative overflow-hidden">
-            <div className="absolute inset-0 leaf-bg" />
-            <LeafMark className="absolute inset-0 m-auto w-40 h-40 text-foreground/30" />
+          <div className="aspect-[4/5] rounded-[2rem] overflow-hidden shadow-[var(--shadow-card)]">
+            <img
+              src={juliaHero3}
+              alt="Júlia Nogueira, neuropsicóloga em Brasília"
+              className="object-cover w-full h-full"
+            />
           </div>
         </div>
         <div className="md:col-span-3 space-y-6">
