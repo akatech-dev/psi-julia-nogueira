@@ -298,7 +298,6 @@ function SmartForm() {
             <Field label="Seu nome" value={nome} onChange={setNome} maxLength={80} required />
             <Field label="Nome do paciente (se diferente do solicitante)" value={paciente} onChange={setPaciente} maxLength={80} />
           </div>
-          <p className="text-xs text-muted-foreground">Isso atende tanto pais quanto adultos que buscam atendimento para si.</p>
           <RadioGroup label="Quem necessita do atendimento?" value={faixa} onChange={setFaixa}
             options={["Criança", "Adolescente", "Adulto", "Idoso"]} />
           <TextArea label="Se desejar, conte brevemente o que está acontecendo" value={necessidade} onChange={setNecessidade} placeholder="Descreva brevemente..." />
@@ -381,7 +380,7 @@ function Faq() {
     { q: "Qual a frequência das sessões de terapia infantil?", a: "Geralmente as sessões são semanais, mas a frequência pode variar de acordo com os objetivos terapêuticos e necessidades da criança." },
     { q: "Os pais participam do processo terapêutico?", a: "Sim. O acompanhamento pode incluir orientações parentais e alinhamentos periódicos com a família, visando favorecer o desenvolvimento da criança e a generalização das habilidades trabalhadas em sessão." },
     { q: "Há contato com a escola ou outros profissionais?", a: "Quando necessário e mediante autorização dos responsáveis, podem ser realizados alinhamentos com a escola, reuniões interdisciplinares e contato com outros profissionais envolvidos no acompanhamento da criança." },
-    { q: "Vocês atendem convênio?", a: "Os atendimentos são particulares. Quando aplicável, a documentação necessária para solicitação de reembolso pode ser fornecida." },
+    { q: "Você atende convênio?", a: "Os atendimentos são particulares. Quando aplicável, a documentação necessária para solicitação de reembolso pode ser fornecida." },
     { q: "Qual é a sua abordagem terapêutica?", a: "Minha atuação é fundamentada principalmente na Terapia Cognitivo-Comportamental (TCC), utilizando estratégias baseadas em evidências científicas para promover o desenvolvimento emocional, social e comportamental da criança. Nos casos de transtornos do neurodesenvolvimento, também podem ser utilizados princípios e estratégias da Análise do Comportamento Aplicada (ABA), de acordo com as necessidades de cada paciente." },
     { q: "Você atende crianças com TEA e TDAH?", a: "Sim. Possuo formação e experiência no acompanhamento de crianças com Transtorno do Espectro Autista (TEA), TDAH, dificuldades de aprendizagem e outras condições do neurodesenvolvimento, sempre considerando as necessidades individuais de cada criança e família." },
     { q: "Como faço para agendar?", a: "Basta preencher o formulário acima ou enviar uma mensagem direta no WhatsApp. Em breve retornaremos com os horários disponíveis." },
