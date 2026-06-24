@@ -81,8 +81,8 @@ function Nav() {
 function Hero() {
   return (
     <section id="top" className="relative leaf-bg overflow-hidden">
-      <div className="mx-auto max-w-7xl px-6 pt-32 pb-20 md:pt-40 md:pb-28 grid md:grid-cols-2 gap-12 items-center">
-        <div className="space-y-7">
+      <div className="mx-auto max-w-7xl px-6 pt-32 pb-20 md:pt-40 md:pb-28 grid gap-12 items-center">
+        <div className="space-y-7 w-full">
           <span className="inline-flex items-center gap-2 rounded-full bg-card border border-border px-4 py-1.5 text-xs uppercase tracking-[0.2em] text-muted-foreground">
             <span className="w-1.5 h-1.5 rounded-full bg-primary" /> Brasília · DF
           </span>
@@ -106,26 +106,7 @@ function Hero() {
             <Tick>Todas as idades</Tick>
           </div>
         </div>
-        <div className="relative">
-          <div className="absolute -inset-6 rounded-[2.5rem] bg-secondary/60 -rotate-2" />
-          <div className="absolute -bottom-6 -right-6 w-40 h-40 rounded-full bg-primary/30 blur-2xl" />
-          <img
-            src={juliaHero}
-            alt="Júlia Nogueira, neuropsicóloga em Brasília"
-            width={1024}
-            height={1536}
-            className="relative rounded-[2rem] object-cover w-full h-[520px] md:h-[600px] shadow-[var(--shadow-card)]"
-          />
-          <div className="absolute bottom-6 left-6 right-6 md:left-auto md:right-6 md:w-72 rounded-2xl bg-card/95 backdrop-blur p-5 shadow-[var(--shadow-card)] border border-border">
-            <div className="flex items-center gap-3">
-              <LeafMark className="w-8 h-8 text-primary" />
-              <div>
-                <div className="font-display text-lg">Júlia Nogueira</div>
-                <div className="text-xs text-muted-foreground">Neuropsicóloga · CRP-01/25444</div>
-              </div>
-            </div>
-          </div>
-        </div>
+        {/* Image removed per request; text now spans full hero area */}
       </div>
     </section>
   );
@@ -151,24 +132,46 @@ function SectionTitle({ eyebrow, title, sub }: { eyebrow?: string; title: string
 }
 
 function About() {
-  const tags = ["Neuropsicologia", "ABA", "Atendimento humanizado", "Desenvolvimento infantil", "Avaliação cognitiva", "Neurodiversidade"];
+  const tags = [
+    "Neuropsicologia",
+    "Terapia Infantil",
+    "TCC",
+    "Desenvolvimento Infantil",
+    "Transtornos do Neurodesenvolvimento",
+    "Avaliação Neuropsicológica",
+  ];
   return (
     <section id="sobre" className="py-24 md:py-32">
       <div className="mx-auto max-w-6xl px-6 grid md:grid-cols-5 gap-12 items-center">
         <div className="md:col-span-2 relative">
-          <div className="aspect-[4/5] rounded-[2rem] overflow-hidden shadow-[var(--shadow-card)]">
+          <div className="aspect-[4/5] rounded-[2rem] overflow-hidden relative shadow-[var(--shadow-card)]">
             <img
               src={juliaHero3}
               alt="Júlia Nogueira, neuropsicóloga em Brasília"
               className="object-cover w-full h-full"
             />
+            <div className="absolute bottom-4 left-4 rounded-2xl bg-card/95 backdrop-blur p-4 shadow-[var(--shadow-card)] border border-border">
+              <div className="flex items-center gap-3">
+                <LeafMark className="w-8 h-8 text-primary" />
+                <div>
+                  <div className="font-display text-lg">Júlia Nogueira</div>
+                  <div className="text-xs text-muted-foreground">Neuropsicóloga · CRP-01/25444</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div className="md:col-span-3 space-y-6">
           <div className="text-xs uppercase tracking-[0.3em] text-muted-foreground">Sobre a profissional</div>
           <h2 className="font-display text-4xl md:text-5xl leading-tight">Olá, sou Júlia Nogueira</h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Meu trabalho é auxiliar crianças, adolescentes, adultos e suas famílias na compreensão de suas potencialidades e desafios, oferecendo intervenções fundamentadas em evidências científicas e em uma escuta acolhedora.
+            Sou psicóloga e neuropsicóloga, com formação em Neuropsicologia, Terapia
+            Cognitivo-Comportamental (TCC) e intervenção ABA para Transtorno do Espectro Autista e
+            Deficiência Intelectual. Atuo com avaliação neuropsicológica de crianças, adolescentes, adultos e
+            idosos, além de acompanhamento psicológico infantil. Minha prática é fundamentada em evidências
+            científicas e voltada à compreensão do funcionamento cognitivo, emocional e comportamental, respeitando
+            as necessidades e particularidades de cada indivíduo. Acredito que avaliações precisas e intervenções
+            individualizadas são fundamentais para promover desenvolvimento, autonomia e qualidade de vida.
           </p>
           <div className="flex flex-wrap gap-2 pt-2">
             {tags.map(t => (
@@ -183,19 +186,19 @@ function About() {
 
 function WhenToSeek() {
   const items = [
-    "Dificuldades escolares",
+    "Dificuldades escolares e de aprendizagem",
     "Suspeita de TDAH",
-    "Suspeita de Autismo",
-    "Problemas de atenção",
-    "Alterações de comportamento",
-    "Dificuldades emocionais",
-    "Questões de aprendizagem",
-    "Avaliação neuropsicológica",
+    "Suspeita de TEA",
+    "Alterações de atenção e concentração",
+    "Alterações de memória",
+    "Dificuldades de organização e planejamento",
+    "Dificuldades emocionais e comportamentais",
+    "Investigação de altas habilidades/superdotação",
   ];
   return (
     <section className="py-24 md:py-28 bg-muted/60">
       <div className="mx-auto max-w-6xl px-6">
-        <SectionTitle eyebrow="Quando procurar ajuda" title="Sinais que indicam o momento de buscar acompanhamento" />
+        <SectionTitle eyebrow="Quando uma avaliação ou acompanhamento psicológico pode ser indicado?" title="Sinais que indicam o momento de buscar acompanhamento" />
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {items.map((t) => (
             <div key={t} className="group rounded-2xl bg-card border border-border p-6 hover:shadow-[var(--shadow-card)] hover:-translate-y-0.5 transition-all">
@@ -215,19 +218,27 @@ function Services() {
   const cards = [
     {
       title: "Avaliação Neuropsicológica",
-      desc: "Investigação completa do funcionamento cognitivo, emocional e comportamental.",
-      meta: "Todas as idades",
-      price: "R$ 2.200",
-      priceSub: "investimento total",
+      desc: "Investigação abrangente do funcionamento cognitivo, emocional e comportamental, auxiliando na compreensão de dificuldades, potencialidades e hipóteses diagnósticas.",
+      meta: "Para crianças, adolescentes, adultos e idosos.",
       service: "Avaliação Neuropsicológica",
     },
     {
       title: "Terapia Infantil",
-      desc: "Atendimento voltado ao desenvolvimento emocional, social e comportamental da criança.",
+      desc: "Atendimento psicológico voltado ao desenvolvimento emocional, social e comportamental da criança, respeitando suas necessidades e particularidades.",
       meta: "0 a 12 anos",
-      price: "R$ 200",
-      priceSub: "por sessão",
       service: "Terapia Infantil",
+    },
+    {
+      title: "Orientação Parental",
+      desc: "Acompanhamento destinado a orientar famílias no manejo de comportamentos, desenvolvimento emocional, rotina, limites, autonomia e desafios relacionados ao desenvolvimento infantil e aos transtornos do neurodesenvolvimento.",
+      meta: "Para pais e responsáveis",
+      service: "Orientação Parental",
+    },
+    {
+      title: "Supervisão Clínica",
+      desc: "Discussão de casos clínicos, raciocínio diagnóstico, interpretação de instrumentos, integração de dados, elaboração de documentos psicológicos e condução de avaliações neuropsicológicas.",
+      meta: "Para psicólogos e neuropsicólogos",
+      service: "Supervisão Clínica",
     },
   ];
   return (
@@ -272,27 +283,27 @@ function SmartForm() {
   const [necessidade, setNecessidade] = useState("");
   const [servico, setServico] = useState("");
 
-  const valid = nome.trim() && paciente.trim() && faixa && necessidade && servico;
+  const valid = nome.trim() && faixa && servico;
   const link = useMemo(() => buildWaMessage({ nome: nome.trim(), paciente: paciente.trim(), faixa, necessidade, servico }), [nome, paciente, faixa, necessidade, servico]);
 
   return (
     <section id="agendar" className="py-24 md:py-32 bg-muted/60">
       <div className="mx-auto max-w-3xl px-6">
-        <SectionTitle eyebrow="Formulário" title="Vamos entender sua necessidade" sub="Preencha as informações abaixo. Você será direcionado ao WhatsApp com a mensagem pronta." />
+        <SectionTitle eyebrow="Formulário" title="Preencha as informações abaixo para que eu possa direcioná-lo ao atendimento mais adequado" sub="" />
         <form
           onSubmit={(e) => { e.preventDefault(); if (valid) window.open(link, "_blank"); }}
           className="rounded-3xl bg-card border border-border p-6 md:p-10 space-y-6 shadow-[var(--shadow-card)]"
         >
           <div className="grid md:grid-cols-2 gap-5">
-            <Field label="Nome do responsável" value={nome} onChange={setNome} maxLength={80} required />
-            <Field label="Nome do paciente" value={paciente} onChange={setPaciente} maxLength={80} required />
+            <Field label="Seu nome" value={nome} onChange={setNome} maxLength={80} required />
+            <Field label="Nome do paciente (se diferente do solicitante)" value={paciente} onChange={setPaciente} maxLength={80} />
           </div>
+          <p className="text-xs text-muted-foreground">Isso atende tanto pais quanto adultos que buscam atendimento para si.</p>
           <RadioGroup label="Quem necessita do atendimento?" value={faixa} onChange={setFaixa}
-            options={["Criança", "Adolescente", "Adulto"]} />
-          <SelectField label="Qual sua principal necessidade?" value={necessidade} onChange={setNecessidade}
-            options={["Suspeita de Autismo","Suspeita de TDAH","Dificuldade escolar","Questões comportamentais","Questões emocionais","Avaliação neuropsicológica","Outro"]} />
+            options={["Criança", "Adolescente", "Adulto", "Idoso"]} />
+          <TextArea label="Se desejar, conte brevemente o que está acontecendo" value={necessidade} onChange={setNecessidade} placeholder="Descreva brevemente..." />
           <SelectField label="Qual serviço deseja?" value={servico} onChange={setServico}
-            options={["Avaliação Neuropsicológica","Terapia Infantil","Preciso de orientação"]} />
+            options={["Avaliação Neuropsicológica","Terapia Infantil","Orientação Parental","Supervisão Clínica","Não tenho certeza"]} />
           <button
             type="submit"
             disabled={!valid}
@@ -315,6 +326,18 @@ function Field({ label, value, onChange, maxLength, required }: { label: string;
       <input
         value={value} onChange={(e)=>onChange(e.target.value)} maxLength={maxLength} required={required}
         className="mt-2 w-full rounded-xl border border-input bg-background px-4 py-3 text-foreground outline-none focus:border-primary focus:ring-2 focus:ring-primary/30 transition"
+      />
+    </label>
+  );
+}
+
+function TextArea({ label, value, onChange, placeholder }: { label: string; value: string; onChange: (v: string)=>void; placeholder?: string }) {
+  return (
+    <label className="block">
+      <span className="text-sm text-foreground/80 font-medium">{label}</span>
+      <textarea
+        value={value} onChange={(e)=>onChange(e.target.value)} placeholder={placeholder}
+        className="mt-2 w-full rounded-xl border border-input bg-background px-4 py-3 text-foreground outline-none focus:border-primary focus:ring-2 focus:ring-primary/30 transition h-32 resize-none"
       />
     </label>
   );
@@ -351,10 +374,16 @@ function SelectField({ label, value, onChange, options }: { label: string; value
 
 function Faq() {
   const items = [
-    { q: "A avaliação atende todas as idades?", a: "Sim. A avaliação neuropsicológica é realizada para crianças, adolescentes, adultos e idosos, com instrumentos específicos para cada faixa etária." },
-    { q: "Qual o valor da avaliação?", a: "O investimento da Avaliação Neuropsicológica completa é de R$ 2.200, incluindo entrevistas, sessões de testagem, devolutiva e laudo." },
-    { q: "Como funciona a terapia infantil?", a: "São sessões semanais voltadas ao desenvolvimento emocional, social e comportamental, com participação ativa da família no processo." },
-    { q: "O atendimento é presencial?", a: "Os atendimentos são realizados em consultório em Brasília. Algumas etapas podem ser feitas de forma online, conforme o caso." },
+    { q: "A avaliação atende todas as idades?", a: "Sim. A avaliação neuropsicológica pode ser realizada com crianças, adolescentes, adultos e idosos, sendo adaptada às necessidades e características de cada fase do desenvolvimento." },
+    { q: "Quando a avaliação neuropsicológica é indicada?", a: "A avaliação pode ser recomendada em casos de suspeita de TDAH, TEA, dificuldades de aprendizagem, alterações de memória, atenção, comportamento, desenvolvimento ou outras questões cognitivas e emocionais." },
+    { q: "Quanto tempo dura o processo de avaliação?", a: "A duração varia de acordo com a idade, a demanda clínica e a complexidade do caso. As etapas e o cronograma são definidos individualmente após a entrevista inicial." },
+    { q: "O que está incluído na avaliação neuropsicológica?", a: "A avaliação neuropsicológica compreende todas as etapas necessárias para uma investigação clínica criteriosa: anamnese, sessões de avaliação, análise integrada dos resultados, elaboração do laudo e devolutiva clínica. Cada processo é planejado de forma individualizada, considerando a demanda e as características de cada paciente." },
+    { q: "Qual a frequência das sessões de terapia infantil?", a: "Geralmente as sessões são semanais, mas a frequência pode variar de acordo com os objetivos terapêuticos e necessidades da criança." },
+    { q: "Os pais participam do processo terapêutico?", a: "Sim. O acompanhamento pode incluir orientações parentais e alinhamentos periódicos com a família, visando favorecer o desenvolvimento da criança e a generalização das habilidades trabalhadas em sessão." },
+    { q: "Há contato com a escola ou outros profissionais?", a: "Quando necessário e mediante autorização dos responsáveis, podem ser realizados alinhamentos com a escola, reuniões interdisciplinares e contato com outros profissionais envolvidos no acompanhamento da criança." },
+    { q: "Vocês atendem convênio?", a: "Os atendimentos são particulares. Quando aplicável, a documentação necessária para solicitação de reembolso pode ser fornecida." },
+    { q: "Qual é a sua abordagem terapêutica?", a: "Minha atuação é fundamentada principalmente na Terapia Cognitivo-Comportamental (TCC), utilizando estratégias baseadas em evidências científicas para promover o desenvolvimento emocional, social e comportamental da criança. Nos casos de transtornos do neurodesenvolvimento, também podem ser utilizados princípios e estratégias da Análise do Comportamento Aplicada (ABA), de acordo com as necessidades de cada paciente." },
+    { q: "Você atende crianças com TEA e TDAH?", a: "Sim. Possuo formação e experiência no acompanhamento de crianças com Transtorno do Espectro Autista (TEA), TDAH, dificuldades de aprendizagem e outras condições do neurodesenvolvimento, sempre considerando as necessidades individuais de cada criança e família." },
     { q: "Como faço para agendar?", a: "Basta preencher o formulário acima ou enviar uma mensagem direta no WhatsApp. Em breve retornaremos com os horários disponíveis." },
   ];
   return (
