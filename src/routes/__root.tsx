@@ -10,6 +10,7 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
+import faviconUrl from "../assets/favicon-logo.png?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
@@ -77,17 +78,23 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "Júlia Nogueira | Neuropsicóloga em Brasília" },
+      { name: "description", content: "Avaliação Neuropsicológica para todas as idades e Terapia Infantil. Atendimento humanizado em Brasília e região. Agende sua consulta pelo WhatsApp." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "Júlia Nogueira | Neuropsicóloga em Brasília" },
+      { property: "og:description", content: "Avaliação Neuropsicológica para todas as idades e Terapia Infantil. Atendimento humanizado em Brasília e região. Agende sua consulta pelo WhatsApp." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Júlia Nogueira | Neuropsicóloga em Brasília" },
+      { name: "twitter:description", content: "Avaliação Neuropsicológica para todas as idades e Terapia Infantil. Atendimento humanizado em Brasília e região. Agende sua consulta pelo WhatsApp." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/CQprMDX88rSHqUKE2a0GeaLemAp2/social-images/social-1782327772424-foto1.webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/CQprMDX88rSHqUKE2a0GeaLemAp2/social-images/social-1782327772424-foto1.webp" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
+      { rel: "icon", type: "image/png", href: faviconUrl },
+      { rel: "apple-touch-icon", href: faviconUrl },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
